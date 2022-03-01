@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -16,120 +17,177 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-<style style="text/css">
-div.slide-left {
-  width:100%;
-  overflow:hidden;
-}
-div.slide-left p {
-  animation: slide-left 10s;
+
+
+<style>
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
 }
 
-@keyframes slide-left {
-  from {
-    margin-left: 100%;
-    width: 300%; 
-  }
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.box{
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 5px;
+    padding-top: 5px;
+    }
+.box .imgl{
+    width: 45px; 
+    height: 45px; 
+    
+   /* display: inline; */
+     box-shadow: 5px 5px 5px #222222;
+    margin-top: -6px;
+    
+}
 
-  to {
-    margin-left: 0%;
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
     width: 100%;
-  }
-}
-</style>
-<script>
-var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-
-if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-
-function mischandler(){
-return false;
+    background-color: white;
+    border-radius: 10px;
 }
 
-function mousehandler(e){
-var myevent = (isNS) ? e : event;
-var eventbutton = (isNS) ? myevent.which : myevent.button;
-if((eventbutton==2)||(eventbutton==3)) return false;
-}
-document.oncontextmenu = mischandler;
-document.onmousedown = mousehandler;
-document.onmouseup = mousehandler;
 
-</script>
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+
+    </style>
+
 </head>
 
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 <div class="page-wrapper">
- 
-     
- <!-- Main Header-->
-    <header class="main-header header-style-one">
-        <div class="auto-container">
+     <header class="main-header header-style-one ">
+       <div class="auto-container">
             <div class="header-lower">
                 <div class="main-box clearfix">
-                    
-
-                    <div class="nav-outer clearfix">
-                        <!-- Main Menu -->
-
-                            <!-- NavBar -->
-
-    <nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark">
-        <a href="index.html" class="navbar-brand logo"><div class="logo-box ">
-                       <img src="images/logo1.png" alt="logo" title="">
-                        <div class="logo"><h2>Mahaveer Paints</h2></div>
-                    </div></a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-            <ul class="navbar-nav ">
-                <li class="nav-item bg-dark">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item bg-dark" >
-                    <a href="products.html" class="nav-link">Our Products</a>
-                </li>
-                 <li class="nav-item bg-dark">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item bg-dark">
-                    <a href="contactus.html" class="nav-link">Contact Us</a>
-                </li>
-                
-            </ul>
+ 
+                   <nav class="navbar">
+                        <div class="box">
+                        <img src="images/logo.png" class="imgl"/>
+        <div class="brand-title">Mahaveer Paints</div></div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="indexx.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
         </div>
-
-    </nav>
-                        <!-- NavBar end -->
-
-
-    <!-- Main Menu End-->                        
-
-                        <!-- Outer Box-->
-           
-                    </div>
-                </div>
+      </nav>
+      
+          </div>
             </div>
         </div>
     </header>
     <!--End Main Header -->    
-   	<!--Page Title-->
-    <section class="main-slider revolution-slider">
+    
+    <!--Main Slider--><div id="overlay" onclick="on()">
+  <div id="text">Overlay Text</div>
+</div>
+       
+   <section class="main-slider revolution-slider">
         
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
                     
-                         <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="home/images/main-slider/2.jpg"  data-saveperformance="off"  data-title="Mahaveer Paints">
-                    <img src="images/bluebg1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                    </li>
+                         <li data-transition="fade">
+                    <img src="images/prod2.png"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                    <center><h2>Welcome to Mahaveer Paints</h2></center>
+                    </li>           
+                  
+              
+                    
                 </ul>
+                
             </div>
         </div>
     </section>
+  
+
+
 
     <!--End Page Title-->
     
@@ -174,8 +232,8 @@ document.onmouseup = mousehandler;
 	
 	
 	<!-- Courses Section -->
-    <section class="courses-section">
-        <div class="auto-container">
+     <section class="courses-section">
+        <div class="container">
             <div class="intro-text text-center">
                 <h2>Acrylic Emulsion</h2>
                 </br>
@@ -187,33 +245,44 @@ document.onmouseup = mousehandler;
 
                 <!-- Course Block -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/emulext.jpg" alt="" width="150" height="160"></a></div>
-                        
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Exterior Emulsion</a></h3><h6>1/4/10/20 ltr</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/emulint.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Interior Emulsion</a></h3><h6>1/4/10/20 ltr</h6>
-                            </div>
-                        </div>
-                </div>
-              </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/emulsion-interior.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>1/4/10/20 lt.</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Exterior Emulsion</a></h3>
                 
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/emulsion-exterior-royal.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>1/4/10/20 lt.</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Interior Emulsion</a></h3>
+                
+            </div>
+        </div>
                 
                 <!-- Course Block -->
                 
             </div>
+        </div>
 
              <!-- Styled Pagination -->
             
@@ -230,27 +299,41 @@ document.onmouseup = mousehandler;
             
             <div class="row" align ="center">
              <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/cementpri.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Exterior Acrylic Primer</a></h3><h6>1/4/10/20 ltr.</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/cementpri.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Interior Acrylic Primer</a></h3><h6>1/4/10/20 ltr.</h6>
-                            </div>
-                        </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/cement-primer-Royal.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>1/4/10/20 lt.</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Exterior Cement Primer</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/cement-primer-Royal.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>1/4/10/20 lt.</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Interior Cement Primer</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
                
                 </div>
                 <!-- Course Block -->
@@ -267,40 +350,60 @@ document.onmouseup = mousehandler;
                 
             
             <div class="row" align ="center">
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/aclyricdis.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Acrylic Distemper<h5>[Bucket]</h5></a></h3><h6>1/2/5/10/20 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/aclyricdisp.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Acrylic Distemper<h5>[Pouches]</h5></a></h3><h6>Bucket pack/Cartoon Pack</h6>
-                            </div>
-                        </div>
-                </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/acrl-distemper-royal.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>2/5/10/20 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Acrylic Distemper(Bucket)</a></h3>
+          
+            </div>
+        </div>
+    </div>
+                
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/aclyricdisws.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Wall Shine Acrylic Distemper<h5>[Pouches]</a></h3>
-                                    <h6>Bucket pack/Cartoon Pack</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Royal Distemper.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>2/5/10/20 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Aclyric Distemper(pouches)</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Wall Shine.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>2/5/10/20 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#"> Wall shine Aclyric Distemper</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
                 <!-- Course Block -->
              <!-- Styled Pagination -->
             
@@ -317,38 +420,59 @@ document.onmouseup = mousehandler;
             
             <div class="row" align ="center">
              <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/royalcoat.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Coat Cem Paint</a></h3><h6>25 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/wallcem.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Wall Cem Paint</a></h3><h6>25 kg</h6>
-                            </div>
-                        </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Royal Coat.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>25 kg</a></li>
+                    
+                </ul>
             </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/cementpaint.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Cem Paint</a></h3><h6>25 kg</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Cement Paint</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Wall Cem.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>25 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#"> Wall Cement Paint</a></h3>
+             
+            </div>
+        </div>
+    </div>
+                
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Royal Cem.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>25 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Cement paint</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
                 <!-- Course Block -->
              <!-- Styled Pagination -->
             
@@ -363,29 +487,41 @@ document.onmouseup = mousehandler;
             
             <div class="row" align ="center">
              <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/wallputty.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Care</a></h3><h6>5/40 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/wallputtymagic.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Magic</a></h3><h6>40 kg</h6>
-                            </div>
-                        </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Wall Putty.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>40 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Care</a></h3>
+               
+            </div>
+        </div>
+    </div>
                 
-                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Wall Putty.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>40 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Magic </a></h3>
+            
+            </div>
+        </div>
+    </div>
+                
                 <!-- Course Block -->
              <!-- Styled Pagination -->
             
@@ -399,30 +535,42 @@ document.onmouseup = mousehandler;
                 
             
             <div class="row" align ="center">
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/royalwhite.jpg" alt=""width="150" height="160" ></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal White<h5>[White/Blue]</h5></a></h3><h6> 5/10/25 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/wallwhite.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Wall White<h5>[White]</h5></a></h3><h6>25 kg</h6>
-                            </div>
-                        </div>
-                </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/lime wash.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>5/10/25 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Lime wash1</a></h3>
+             
+            </div>
+        </div>
+    </div>
                 
-                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Wall White.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>25 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Wall White</a></h3>
+              
+            </div>
+        </div>
+    </div>
+                
                 <!-- Course Block -->
              <!-- Styled Pagination -->
             
@@ -437,37 +585,59 @@ document.onmouseup = mousehandler;
             
             <div class="row" align ="center">
              <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/tilefix.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal Fixing</a></h3><h6>20/25/30 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/tilefix.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Grey Cement</a></h3><h6>20/25/30 kg</h6>
-                            </div>
-                        </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Tile Fixing Adhesive.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>20/25/30 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal Fixing</a></h3>
+              
+            </div>
+        </div>
+    </div>
+                
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/tilefix.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a href="product.php?subid=mainpro/46&subidname=Wood Pink Primer" style="font-size: 21px;">White Cement</a></h3><h6>20/25/30 kg</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Tile Fixing Adhesive.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>20/25/30 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Grey Cement</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Tile Fixing Adhesive.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>20/25/30 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">White Cement</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
                 </div>
                 <!-- Course Block -->
              <!-- Styled Pagination -->
@@ -482,37 +652,60 @@ document.onmouseup = mousehandler;
                 
             
             <div class="row" align ="center">
-             <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/cp-royal.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Porbandar[Super Microfine]</a></h3><h6>40 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/cp-royal.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Porbandar Bhaivya[Microfine]</a></h3><h6>20 kg</h6>
-                            </div>
-                        </div>
-                </div></div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/cp-tractor.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Porbandar Tractor</a></h3><h6>20 kg</h6>
-                            </div>
-                        </div>
-                </div></div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Whiting Chalk Powder.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>40 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Porbandar super microfine</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Whiting Chalk Powder.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>20 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Porbandar bhaivya</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Prbandar Chalk.png">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>20 kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Porbandar Tractor</a></h3>
+              
+            </div>
+        </div>
+    </div>
+                
                 
                 
                 <!-- Course Block -->
@@ -531,36 +724,58 @@ document.onmouseup = mousehandler;
             
             <div class="row" align ="center">
              <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/pop-royal.jpg" alt="" width="150" height="160"></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Royal</a></h3><h6>16 kg</h6>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><img src="images/pop-swastik.jpg" alt="" width="150" height="160"></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Swastik</a></h3><h6>(10 x 3kg)/(30 x 1kg)</h6>
-                            </div>  
-                        </div>
-                </div>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/photos/Gypsum Plaster.png">
+                </a>
+                <ul class="product-links">
+                    <li><a><i class="fa fa-shopping-bag"></i>16 kg</a></li>
+                    
+                </ul>
             </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Royal POP</a></h3>
+               
+            </div>
+        </div>
+    </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/pop-swastik.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>(10*3)/(30*1)kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Swastik POP</a></h3>
+                
+            </div>
+        </div>
+    </div>
+                
         <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/pop-divya.jpg" alt="" width="150" height="160"></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Divya</a></h3><h6>(10 x 3kg)/(30 x 1kg)</h6>
+                    <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="images/pop-divya.jpg">
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i>(10*3)/(30*1)kg</a></li>
+                    
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Divya POP</a></h3>
                             </div>
-                        </div>
-                </div></div></div>
+        </div>
+    </div>
+                </div>
 
                 <hr>
         
@@ -572,290 +787,41 @@ document.onmouseup = mousehandler;
         </div>
     </div>
 </section>
-    <!--
+    </center>
 
         
    
     
-    
-   
-        <div class="auto-container">
-            <div class="intro-text text-center">
-                <h2>Wall Putty</h2>
-                <h4>You can always choose a product from the wide range that matches your requirements and budget...</h4>
-                 </div>
-            
-            <div class="row">
-             
-
-           
-            
-                        
-               <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Wall Color</a></h3><h4>25 kg</h4>
-                                
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div><div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Magic</a></h3><h4>40 kg</h4>
-                                
-                           
-                            
-                           
-                        </div>
-                    </div>
-                </div></div>
-                </div><div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a href="product.php?subid=mainpro/46&subidname=Wood Pink Primer" style="font-size: 21px;">Care</a></h3><h4>40 kg</h4>
-                                
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                </div>
-             
-            </div>
-
-            
-            
-        </div>
-   
-        <div class="auto-container">
-            <div class="intro-text text-center">
-                <h2>Aclyric Distemper</h2>
-                <h4>You can always choose a product from the wide range that matches your requirements and budget...</h4>
-                </div>
-            
-            <div class="row">
-             
-
-            
-            
-                        
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Wall shine</a></h3><h4>25 kg</h4>
-                                
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div><div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">R/Dis</a></h3><h4>25 kg</h4>
-                                
-                           
-                            
-                           
-                        </div>
-                    </div>
-                </div></div>
-                </div>
-                </div>
-             
-                
-            </div>
-
-            
-            
-        </div>
-    
-        <div class="auto-container">
-            <div class="intro-text text-center">
-                <h2>Aclyric Cement Primer</h2>
-                <h4>You can always choose a product from the wide range that matches your requirements and budget...</h4>
-                </div>
-            
-            <div class="row">
-             
-
-            
-                        
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Exterior</a></h3><h4>25 kg</h4>
-                                
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div><div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box"><a href="product.php?subid=mainpro/44&subidname=Synthetic Clear Varnish"><img src="images/p1.jpg" alt=""></a></div>
-                        <div class="lower-content">
-                            <div class="title" style="min-height: 78px;">
-                                <h3><a style="font-size: 21px;">Interior</a></h3><h4>25 kg</h4>
-                                
-                           
-                            
-                           
-                        </div>
-                    </div>
-                </div></div>
-                </div>
-                    
-                </div>
-             
-                
-            </div>
-
-           
-            
-        </div>
-    </section>
-    
-    End Courses Section -->
-	
-	
-
-   
-
-
-
-
-
-
-    <!-- Main Footer -->
-
-        <!--<div class="auto-container">
-            
-            <div class="widgets-section">
-                <div class="row clearfix">
-                    
-                   
-                    <div class="footer-column col-md-4 col-sm-12 col-xs-12">
-                        <div class="footer-widget about-widget">
-                            <div class="footer-logo">
-                                <figure><a href="index.php"><img src="images/logo.png" alt=""></a></figure> 
-                            </div>
-                            <div class="widget-content">
-                              
-                                <p align="justify">Agsar Paints Pvt.Ltd., is the vanguard company of the Agsar group, a Tuticorin based
-                                organization founded by a group of enthusiastic brothers in 1964.
-                                <br/>
-                             Visitors Count: 
-<a href="" target="_blank"><img src="http://www.cutercounter.com/hit.php?id=geuunoopq&nd=7&style=51" border="0" alt="hit counter"></a>
-
-                                </p>
-                                <span class="icon icon-sparrow wow slideInLeft" data-wow-duration="2500ms" data-wow-delay="0ms"></span>
-								<span class="icon icon-ags wow slideInLeft" data-wow-duration="2500ms" data-wow-delay="0ms"></span>
-                            </div>
-                        </div>
-                    </div>
-                        
-                  
-                    <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-widget posts-widget">
-                            <h2 class="widget-title">Our Products</h2>
-                            <div class="widget-content">
-                              
-                                   <ul class="tweet_list">
-                                    <li class="tweet" style="padding-bottom:5px;"> <a href="category.php?id=Pro/03&subidname=Wall Paints"> <span class="tweet-text avatar_"> Wall Paints </span></a></li>
-                                    <li class="tweet" style="padding-bottom:5px;"><a href="category.php?id=Pro/05&subidname=Floor Paints"> <span class="tweet-text avatar_">Floor Paints</span></a></li>
-                                    <li class="tweet" style="padding-bottom:5px;"> <a href="category.php?id=Pro/03&subidname=Wall Paints"> <span class="tweet-text avatar_">Metal Paints</span></a></li>
-                                    <li class="tweet" style="padding-bottom:5px;"> <a href="category.php?id=Pro/02&subidname=Wood Paints"> <span class="tweet-text avatar_">Wood paints</span></a></li>
-									<li class="tweet" style="padding-bottom:5px;"> <a href="category.php?id=Pro/01&subidname=Essentials" <span class="tweet-text avatar_">Essentials</span></a></li>
-                                </ul>                                   
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                                        <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-widget contact-widget">
-                            <h2 class="widget-title">Contact</h2>
-                            <div class="widget-content">
-                                <ul class="contact-info-list">
-                                    <li><i class="flaticon-phone-auricular-with-high-volume"></i>Contact : 0461-2320316 / 2320696</li>
-                                    <li><i class="flaticon-map-marker-1"></i>M/s. Agsar Paints Pvt. Limited,<br/>
-509A, George Road,<br/>
-Tuticorin - 628 003. <br/>
-Tamilnadu.</li>
-                                    <li><i class="flaticon-black"></i>tuticorin@agsar.net</li>
-                                </ul>
-
-                                <ul class="social-icon-two">
-                                    
-                                    <li><a href="https://www.facebook.com/AgsarPaintsIndia/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
-                                
-                                   
-                                </ul>
-
-                                
-                            </div>       
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>-->
-        	 <footer class="main-footer" style="background-image:url(home/images/background/footer-bg.jpg);">
         
       
         
         <!--Footer Bottom-->
-        <div class="footer-bottom">
+     <footer class="main-footer" style="background-image:url(home/images/background/footer-bg.jpg);">
+        
+      
+        
+        <!--Footer Bottom-->
+         <div class="footer-bottom">
             <div class="auto-container clearfix">
                 <!--Copyright-->
                 <div class="copyright text-center">Copyright 2020 &copy;| Mahaveer Paints | Created By 
-                <a href="#" style="color: #f7f7fb;">Manas Sharma & Team</a> </div><div class="social-links" >
+                <a href="#" style="color:white">Manas Sharma & Team</a> </div><div class="social-links" >
                                         <a href="https://www.facebook.com/mahaveer.paints.3/" class="facebook img-circle" target="_blank"><span class="fa fa-facebook-f" style="padding-top: 7px;
-    text-align: center;"></span></a>
+    text-align: center;color:white"></span></a>
                                         <a href="#" class="twitter img-circle" target="_blank"><span class="fa fa-twitter" style="padding-top: 7px;
-    text-align: center;"></span></a>
+    text-align: center;color:white"></span></a>
                                         <a href="https://instagram.com/mahaveerpaintindustries?igshid=1kun7pmtrues4" class="instagram img-circle" target="_blank"><span class="fa fa-instagram" style="padding-top: 7px;
-    text-align: center;"></span></a>
+    text-align: center; color:white;"></span></a>
                                        <a href="https://wa.me/9425203718" class="whatsapp img-circle" target="_blank"><span class="fa fa-whatsapp" style="padding-top: 7px;
-    text-align: center;"></span></a>
+    text-align: center;color:white"></span></a>
                                         <!--<a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
                                         <a href="#" class="linkedin img-circle"><span class="fa fa-pinterest-p"></span></a>
                                         <a href="#" class="linkedin img-circle"><span class="fa fa-linkedin"></span></a>-->
                                     </div>
-            </div></div>
-        <!--
-        <div class="footer-bottom">
-            <div class="auto-container">
-                <div class="clearfix">
-                    <div class="copyright-text">
-                        <p>Copyright &copy; 2019 Agsar Paints. All Rights Reserved. Designed By <a href="http://anaxinfotech.com" target="_blank">Anax Infotech</a></p>
-                    </div>
-                    
-                    <ul class="footer-links clearfix">
-                        <li><a href="dealer-enquiry.php">Dealer Enquiry</a></li>
-                        <li> <a href="dealers.php"> Our Dealers</a></li>
-                        <li><a href="contactus.php">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-End Main Footer -->    
+      
 
+</div>
+    </footer>
     
 
 </div>
@@ -889,14 +855,21 @@ Tamilnadu.</li>
 <script src="js/wow.js"></script>
 <script src="js/script.js"></script>
 
+<script type="text/javascript">
+    const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+</script>
 
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
 
 </body>
 
