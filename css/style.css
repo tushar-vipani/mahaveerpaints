@@ -4694,7 +4694,7 @@ li.col-xs-12:before{
 .product-grid{
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
     background-color: white;
 }
 .product-grid .product-image{ position: relative; }
