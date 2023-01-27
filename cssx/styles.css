@@ -5633,7 +5633,7 @@ textarea.form-control-lg {
   padding: 0.75rem;
   word-wrap: break-word;
 }
-
+/*
 .modal {
   position: fixed;
   top: 0;
@@ -5916,6 +5916,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
+*/
 .tooltip {
   position: absolute;
   z-index: 1080;
