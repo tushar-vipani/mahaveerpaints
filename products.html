@@ -126,6 +126,123 @@
         display: flex;
     }
 }
+.banner-container .banner{
+background:linear-gradient(-56deg, rgb(248, 173, 92) 29%, rgb(255, 115, 0) 29.1%, rgb(255, 115, 0) 68%, rgb(248, 173, 92) 68.1%);
+    border-radius: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 10px #0005;
+    overflow: hidden;
+}
+
+.banner-container .banner .shoe{
+    flex:1 1 250px;
+    padding:15px;
+    text-align: center;
+    height: 60%;
+}
+
+.banner-container .banner .shoe img{
+    width:150px;
+    height:160px;
+}
+.banner-container .banner .shoe .btn{
+    padding: 12px 28px;
+  box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+  line-height: 1.25;
+  background: white;
+  text-decoration: none;
+  color: rgb(91, 43, 4);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color .6s ease;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(white,.1);
+    border-radius: 100%;
+    transition: width .3s ease, height .3s ease;
+  }
+  &:focus,
+  &:hover {
+      background: darken(white,7%);
+  }
+  &:active {
+    &:after {
+    
+    }
+  }
+}
+
+  
+}
+.banner-container .banner .content{
+    flex:1 1 250px;
+    text-align: center;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.banner-container .banner .content span{
+    color:#eee;
+    font-size: 25px;
+}
+
+.banner-container .banner .content h3{
+    color:#fff;
+    font-size: 45px;
+}
+
+.banner-container .banner .content p{
+    color:#eee;
+    font-size: 20px;
+    padding:10px 0;
+}
+
+.banner-container .banner .content .btn{
+    display: block;
+    height:40px;
+    width:150px;
+    line-height: 40px;
+    background: #fff;
+    color:#d63031;
+    margin:5px auto;
+    text-decoration: none;
+}
+
+.banner-container .banner .women{
+    position: relative;
+    bottom: -33px;
+    padding:10px;
+    flex:1 1 250px;
+}
+
+.banner-container .banner .women img{
+    width:100%;
+}
+
+@media (max-width:768px){
+    .banner-container .banner .women{
+        display: none;
+    }
+}
+
+
 
 
     </style>
@@ -150,7 +267,7 @@
         </a>
         <div class="navbar-links">
           <ul>
-            <li><a href="indexx.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contactus.html">Contact</a></li>
@@ -234,7 +351,43 @@
 	
 	<!-- Courses Section -->
      <section class="courses-section">
+        <div class="banner-container">
+
+            <div class="banner">
+                <div class="shoe">
+                    <img src="images/Distemper-Bucket-removebg-preview.png" alt=""><br>
+                    <button class="btn" id="button">Acrylic Distemper</button>
+                </div>
+                <div class="shoe">
+                    <img src="images/Primer-Bucket-removebg-preview.png" alt=""><br>
+                    <button class="btn">Water Based Primer(Ext/Int)</button>
+                </div>
+                <div class="content">
+                    <span><center>Newly launched!</center></span>
+                    <h3>गोबर युक्त पेंट</h3>
+                   </div>
+                <div class="shoe">
+                    <img src="images/Plastic-Emulsion-Bucket-removebg-preview.png" alt=""><br>
+                    <button class="btn">Plastic Emulsion(Ext/Int)</button>
+                </div>
+                <div class="shoe">
+                    <img src="images/Wallputty-Sack-removebg-preview.png" alt=""><br>
+                    <button class="btn">Wall Putty</button>
+                </div>
+             
+                <div class="women">
+                    <img src="prod2.png" alt="">
+                </div>
+            </div>
+        
+        </div>
+        
         <div class="container">
+           
+    <hr>
+
+
+
             <div class="intro-text text-center">
                 <h2>Acrylic Emulsion</h2>
                 </br>
@@ -799,6 +952,16 @@
 <script src="js/owl.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/script.js"></script>
+<script>
+    let button = document.getElementById("button");
+
+button.addEventListener('mousemove', (e) => {
+    x = e.offsetX;
+    y = e.offsetY;
+    button.style.setProperty('--mouse-x', x + "px");
+    button.style.setProperty('--mouse-y', y + "px");
+});
+</script>
 
 <script type="text/javascript">
     const toggleButton = document.getElementsByClassName('toggle-button')[0]
